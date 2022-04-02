@@ -1,0 +1,30 @@
+name: 'Satis S3 Action'
+description: 'Builds a Composer Satis repository and syncs the output to an S3 bucket'
+author: Scott Charlesworth
+branding:
+  icon: 'upload-cloud'
+  color: 'green'
+inputs:
+  s3_bucket:
+    description: 'The AWS S3 bucket to write the output to'
+    required: true
+  s3_path:
+    description: 'The path inside the AWS S3 bucket to write the output to'
+    required: false
+    default: ''
+  purge:
+    description: 'Run the purge command after building to remove unreferenced archives'
+    required: false
+    default: 'true'
+  config_file:
+    description: 'The location of the satis config file in the repository'
+    required: false
+    default: 'satis.json'
+  debug:
+    description: 'Output debug information to console'
+    required: false
+    default: 'false'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
