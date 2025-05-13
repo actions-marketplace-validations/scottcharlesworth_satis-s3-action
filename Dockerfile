@@ -1,9 +1,14 @@
 FROM phpdockerio/php:8.4-cli
 
-# Install awscli and openssh-client
+# Install openssh-client
 RUN apt-get update \
-    && apt-get install -yq --no-install-recommends awscli openssh-client \
+    && apt-get install -yq --no-install-recommends openssh-client \
     && apt-get clean
+
+# Install AWS CLI v2
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    && unzip awscliv2.zip \
+    && sudo ./aws/install
 
 # Gather the public SSH host keys of GitHub and Bitbucket add to known hosts
 RUN mkdir ~/.ssh \

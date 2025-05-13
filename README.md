@@ -110,7 +110,7 @@ This is an example IAM policy with the minimum required permissions.
 | AUTH_BITBUCKET_SECRET | No       | The Bitbucket consumer secret.                                                                                                                                                                   |
 
 You are also able to set any environment variables from the
-[AWS CLI v1 documentation](https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-envvars.html).
+[AWS CLI v2 documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html).
 
 ## Credits
 
