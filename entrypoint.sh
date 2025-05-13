@@ -18,6 +18,9 @@ if [ ! -z "$AUTH_BITBUCKET_KEY" ] && [ ! -z "$AUTH_BITBUCKET_SECRET" ]; then
 	echo ""
 fi
 
+# Trust the workspace folder, no matter its ownership
+git config --global --add safe.directory "${GITHUB_WORKSPACE:-$(pwd)}"
+
 echo "Create OUT_PATH directory ..."
 mkdir -p $OUT_PATH
 echo ""
