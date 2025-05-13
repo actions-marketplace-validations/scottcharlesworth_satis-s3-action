@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run satis-s3-action
-        uses: scottcharlesworth/satis-s3-action@v1
+        uses: scottcharlesworth/satis-s3-action@v2
         with:
           s3_bucket: 'satis-s3-action-example'
         env:
