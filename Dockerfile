@@ -1,8 +1,8 @@
 FROM phpdockerio/php:8.4-cli
 
-# Install openssh-client
+# Install git and openssh-client
 RUN apt-get update \
-    && apt-get install -yq --no-install-recommends openssh-client \
+    && apt-get install -yq --no-install-recommends git openssh-client \
     && apt-get clean
 
 # Install AWS CLI v2
