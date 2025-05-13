@@ -15,6 +15,9 @@ RUN mkdir ~/.ssh \
 	&& ssh-keyscan -H github.com >> /root/.ssh/known_hosts \
     && ssh-keyscan -H bitbucket.org >> /root/.ssh/known_hosts
 
+# Mark /github/workspace as a safe directory
+RUN git config --global --add safe.directory /github/workspace
+
 # Create composer/satis project
 RUN composer create-project composer/satis:dev-main ~/satis --no-interaction
 
