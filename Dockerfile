@@ -1,4 +1,4 @@
-FROM phpdockerio/php:8.0-cli
+FROM phpdockerio/php:8.4-cli
 
 # Install awscli and openssh-client
 RUN apt-get update \
