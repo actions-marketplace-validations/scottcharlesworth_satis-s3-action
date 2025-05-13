@@ -16,7 +16,8 @@ RUN mkdir ~/.ssh \
     && ssh-keyscan -H bitbucket.org >> /root/.ssh/known_hosts
 
 # Mark /github/workspace as a safe directory and set permissions
-RUN git config --global --add safe.directory /github/workspace \
+RUN mkdir -p /github/workspace \
+    && git config --global --add safe.directory /github/workspace \
     && chmod -R 777 /github/workspace
 
 # Create composer/satis project
